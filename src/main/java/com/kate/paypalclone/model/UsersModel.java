@@ -1,6 +1,7 @@
 package com.kate.paypalclone.model;
 
 
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -12,7 +13,7 @@ public class UsersModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
 
-    String login;
+    String name;
 
     String password;
 
@@ -26,12 +27,12 @@ public class UsersModel {
         this.id = id;
     }
 
-    public String getLogin() {
-        return login;
+    public String getName() {
+        return name;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
@@ -50,24 +51,25 @@ public class UsersModel {
         this.email = email;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        UsersModel that = (UsersModel) o;
-        return Objects.equals(id, that.id) && Objects.equals(login, that.login) && Objects.equals(password, that.password) && Objects.equals(email, that.email);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, login, password, email);
-    }
+    //    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        UsersModel that = (UsersModel) o;
+//        return Objects.equals(id, that.id) && Objects.equals(login, that.login) && Objects.equals(password, that.password) && Objects.equals(email, that.email);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id, login, password, email);
+//    }
 
     @Override
     public String toString() {
         return "UsersModel{" +
                 "id=" + id +
-                ", login='" + login + '\'' +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 '}';
     }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/>/www.thymeleaf.org" lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kate's Paypal Clone - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/49d89cdd8b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div th:replace="~{fragments :: header}"></div>
+
+    <div class="welcome-title">
+        <h1>Welcome!</h1>
+    </div>
+
+    <div class="wrapper-login">
+            <span class="icon-close">
+                <i class="fa-solid fa-xmark"></i>
+            </span>
+
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form method="post" action="/paypalclone/process_login">
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" required name="email">
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" required name="password">
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account?<a href="/paypalclone/register" class="register-link"> Register</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../static/js/script.js"></script>
+
+
+</body>
+
+</html>

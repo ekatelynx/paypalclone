@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/>/www.thymeleaf.org" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kate's Paypal Clone - Registration</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/49d89cdd8b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div th:replace="~{fragments :: header}"></div>
+    <div class="welcome-title">
+        <h1>Welcome!</h1>
+    </div>
+
+    <div class="wrapper-register">
+            <span class="icon-close">
+                <i class="fa-solid fa-xmark"></i>
+            </span>
+
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form method="post" action="/paypalclone/process_registration">
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <input type="text" required name="name">
+                    <label>Name</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" required name="email">
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" required name="password">
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">I agree to the terms & conditions</label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an account?<a href="/paypalclone/login" class="login-link"> Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../static/js/script.js"></script>
+
+</body>
+
+</html>
