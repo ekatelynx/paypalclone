@@ -1,29 +1,36 @@
 package com.kate.paypalclone.model;
 
-
-
-import javax.persistence.*;
-import java.util.Objects;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "users_table")
 public class UsersModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    Long id;
 
+    @Column(nullable = false)
     String name;
 
+    @Column(nullable = false)
     String password;
 
+    @Column(nullable = false)
     String email;
 
-    public Integer getId() {
+    public UsersModel() {
+        this.id = 1L;
+        this.name = "";
+        this.password = "";
+        this.email = "";
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

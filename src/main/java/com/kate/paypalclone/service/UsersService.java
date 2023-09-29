@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class UsersService {
 
     @Autowired
-    private UsersRepository usersRepository;
+    UsersRepository usersRepository;
 
     public UsersModel registerUser(UsersModel usersModel) {
         if (usersModel.getName() == null || usersModel.getPassword() == null || usersModel.getEmail() == null) {

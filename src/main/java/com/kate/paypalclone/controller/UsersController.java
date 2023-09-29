@@ -11,11 +11,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-
 public class UsersController {
 
     @Autowired
-    private UsersService usersService;
+    UsersService usersService;
 
     @GetMapping("/register")
     public String getRegisterPage(Model model) {
@@ -31,14 +30,12 @@ public class UsersController {
 //
     @PostMapping("/process_registration")
     public String register(@ModelAttribute("usersModel") UsersModel usersModel) {
-        System.out.println("register request: " + usersModel);
         UsersModel registeredUser = usersService.registerUser(usersModel);
         if (registeredUser != null && registeredUser.getId() != null){
-            System.out.println("Saved!");
+            System.out.println("New user "+registeredUser.getName() + " " + registeredUser.getEmail()+" has been registered successfully!");
         }
         else{
-            System.out.println("Failed to save!");
-            System.out.println("Returned object: " + registeredUser);
+            System.out.println("New user "+registeredUser.getName() + " " + registeredUser.getEmail()+" could not be registered. Please try again later!");
         }
         return registeredUser == null ? "error_page" : "login_page";
     }
@@ -47,6 +44,17 @@ public class UsersController {
     public String login(@ModelAttribute("usersModel") UsersModel usersModel) {
         System.out.println("login request: " + usersModel);
         UsersModel authenticated_user = usersService.authenticate(usersModel.getEmail(), usersModel.getPassword());
+        if (authenticated_user != null && authenticated_user.getEmail() != null && authenticated_user.getPassword() != null){
+            if (authenticated_user.getEmail().equalsIgnoreCase(usersModel.getEmail()) && authenticated_user.getPassword().equals(usersModel.getPassword())){
+                System.out.println("User "+authenticated_user.getName() + " " + authenticated_user.getEmail()+" has logged in successfully!");
+            }
+            else{
+                System.out.println("User "+authenticated_user.getName() + " " + authenticated_user.getEmail()+" has supplied incorrect login information!");
+            }
+        }
+        else{
+            System.out.println("User "+authenticated_user.getName() + " " + authenticated_user.getEmail()+" could not be found!");
+        }
         return authenticated_user == null ? "error_page" : "my_account";
     }
 
