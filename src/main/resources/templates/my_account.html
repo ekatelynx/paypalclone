@@ -1,10 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http:/>/www.thymeleaf.org" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal Clone: Summary</title>
+    <link rel="stylesheet" href="css/style-account.css">
+    <script src="https://kit.fontawesome.com/49d89cdd8b.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div th:replace="~{fragments :: account_header}"></div>
+    <div th:replace="~{fragments :: footer}"></div>
+
+<!--Summary Main Sections-->
+
+    <div class="balance">
+        <h2>PayPal Clone Balance</h2>
+        <h2>$0.00</h2>
+        <h3>Available</h3>
+        <button class="btnTransferMoney">Transfer Money</button>
+    </div>
+    <div class="rewards">
+        <h2>PayPal Clone Rewards</h2>
+        <h2>0 points</h2>
+        <h3>($0.00 redemption value)</h3>
+    </div>
+
+<!--Summary Main Buttons-->
+
+    <div class="button">
+        <a href="/paypalclone/send_money" class="sendMoney-link">
+            <button class="btnSend">Send</button>
+        </a>
+        <a href="/paypalclone/request_money" class="requestMoney-link">
+            <button class="btnRequest">Request</button>
+        </a>
+    </div>
+
+<!--Summary Main Icons Menu-->
+
+    <div class="summary_menu_icon">
+        <a href="#" class="directToBank-link">
+<!--            <span class="icon"><i class="paper_plane_cursor"></i></span>-->
+            <button class="btnLogin-popup">Direct To Bank</button>
+        </a>
+        <a href="#" class="addCardOrBank-link">
+<!--            <span class="icon"><i class="bank_with_plus_sign"></i></span>-->
+            <button class="btnLogin-popup">Add card or bank</button>
+        </a>
+        <a href="#" class="createAnInvoice-link">
+<!--            <span class="icon"><i class="document"></i></span>-->
+            <button class="btnLogin-popup">Create an invoice</button>
+        </a>
+        <a href="#" class="paypalcloneRewards-link">
+<!--            <span class="icon"><i class="trophy"></i></span>-->
+            <button class="btnLogin-popup">PayPal Clone Rewards</button>
+        </a>
+        <a href="#" class="more3dots-link">
+<!--            <span class="icon"><i class="3dots"></i></span>-->
+            <button class="btnLogin-popup"></button>
+        </a>
+    </div>
+
 
 </body>
 </html>

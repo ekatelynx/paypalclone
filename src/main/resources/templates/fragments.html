@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html xmlns:th="http:/>/www.thymeleaf.org" lang="en">
+<html xmlns:th="http:/>/www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+
+    <!--MAIN PAGE, LOGIN AND SIGN UP PAGE HEADER-->
+
     <div th:fragment="header">
         <header>
             <h2 class="logo">Paypal Clone</h2>
@@ -24,10 +27,45 @@
             </div>
         </header>
     </div>
-    <div th:fragment="menu ">
 
+    <!--ACCOUNT HEADER-->
+
+    <div th:fragment="account_header">
+        <div class="paypalAccount_header">
+            <nav class="account_navigation">
+                <a href="/paypalclone/my_account">Home</a>
+                <a href="/paypalclone/my_account">Finances</a>
+                <a href="/paypalclone/send_money">Send</a>
+                <a href="/paypalclone/request_money">Request</a>
+                <a href="/paypalclone/my_account">Wallet</a>
+                <a href="/paypalclone/my_account">Activity</a>
+                <a href="/paypalclone/my_account">Help</a>
+                <a href="/paypalclone/my_account">
+                    <span class="icon"><i class="setting_wheel"></i></span>
+                </a>
+                <a href="/paypalclone/my_account">
+                    <span class="icon"><i class="bell"></i></span>
+                </a>
+                <a href="/paypalclone/my_account">LOG OUT</a>
+
+            </nav>
+        </div>
 
     </div>
+
+    <-- HEADER FOR SEND & REQUEST PAGE -->
+
+    <div th:fragment="send_request_menu">
+        <nav class="send_request_navigation">
+            <a href="/paypalclone/send_money">Send</a>
+            <a href="/paypalclone/request_money">Request</a>
+            <a href="/paypalclone/contact_list">Contacts</a>
+            <a href="#">More</a>
+        </nav>
+    </div>
+
+    <!--ALL PAGES FOOTER-->
+
     <div th:fragment="footer">
 
     </div>

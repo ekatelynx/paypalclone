@@ -24,7 +24,7 @@ public class UsersController {
 
     @GetMapping("/login")
     public String getLoginPage(Model model) {
-//        model.addAttribute("loginRequest", new UsersModel());
+//        model.addAttribute("loginRequest", new UsersModel());     display their name
         return "login_page";
     }
 //
@@ -56,6 +56,25 @@ public class UsersController {
             System.out.println("User "+authenticated_user.getName() + " " + authenticated_user.getEmail()+" could not be found!");
         }
         return authenticated_user == null ? "error_page" : "my_account";
+    }
+
+
+    @GetMapping("/my_account")
+    public String getMyAccountPage(Model model) {
+//        model.addAttribute("registerRequest", new UsersModel());
+        return "my_account";
+    }
+
+    @GetMapping("/send_money")
+    public String getSendMoneyPage(Model model) {
+//        model.addAttribute("registerRequest", new UsersModel());
+        return "send_money_page";
+    }
+
+    @GetMapping("/request_money")
+    public String getRequestMoneyPage(Model model) {
+//        model.addAttribute("registerRequest", new UsersModel());
+        return "request_money_page";
     }
 
 }
