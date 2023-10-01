@@ -5,20 +5,20 @@
     box-sizing: border-box;
 }
 
-/* BODY */
+/*   BODY   */
 
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: linear-gradient(rgba(50,30,10,0.6),rgba(50,30,10,0)), url('../img/image.jpg');
+    background-image: linear-gradient(rgba(50,30,10,0.3),rgba(50,30,10,0)), url('../img/image2.jpg');
     background-size: cover;
     background-position: center;
 }
 
 
-/* HEADER */
+/*   HEADER   */
 
 
 header {
@@ -27,6 +27,7 @@ header {
     left: 0;
     width: 100%;
     padding: 20px 100px;
+    background-color: rgba(84,65,30,0.4);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,20 +36,32 @@ header {
 
 .logo {
     font-size: 4em;
+    font-style: italic;
     color: #cecece;
     user-select: none;
     text-shadow: 10px 10px 20px rgba(0, 0, 0, 20);
+    text-align: left;
 }
 
 .navigation a {
     position: relative;
-    left: 280px;
+    right: 400px;
     font-size: 1.1em;
     color: #cecece;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 40px;
+    margin-right: 40px;
 }
+
+.help {
+    position: relative;
+    left: 480px;
+    font-size: 1.1em;
+    color: #cecece;
+    text-decoration: none;
+    font-weight: 500;
+}
+
 
 .navigation a::after {
     content: "";
@@ -67,7 +80,7 @@ header {
     transform: scaleX(1);
 }
 
-/*BUTTON FOR LOGIN & SIGNUP*/
+/*   BUTTON FOR LOGIN & SIGNUP   */
 
 .button .btnLogin-popup {
     width: 130px;
@@ -109,8 +122,65 @@ header {
     color: #341f13ef;
 }
 
+/*   FOOTER    */
 
-/*WELCOME*/
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(84,65,30,0.4);
+    color: #cecece;
+    text-align: left;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo_foot {
+    font-size: 2em;
+    color: #cecece;
+    user-select: none;
+    text-shadow: 10px 10px 20px rgba(0, 0, 0, 20);
+}
+
+.footer_nav a {
+    position: relative;
+    text-align: right;
+    right: 440px;
+    font-size: 1em;
+    color: #cecece;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.footer_nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: #cecece;
+    border-radius: 5x;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.footer_nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.footer_nav .webName {
+    text-align: right;
+}
+
+
+
+/*   WELCOME   */
 
 
 .welcome-title {

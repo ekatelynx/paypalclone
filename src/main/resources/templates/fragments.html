@@ -10,12 +10,13 @@
 
     <div th:fragment="header">
         <header>
-            <h2 class="logo">Paypal Clone</h2>
+            <h2 class="logo">P</h2>
             <nav class="navigation">
                 <a href="/paypalclone">Home</a>
                 <a href="/paypalclone">About</a>
                 <a href="/paypalclone">Services</a>
                 <a href="/paypalclone">Contact</a>
+                <a href="/paypalclone" class="help">Help</a>
             </nav>
             <div class="button">
                 <a href="/paypalclone/login" class="login-link">
@@ -32,6 +33,7 @@
 
     <div th:fragment="account_header">
         <div class="paypalAccount_header">
+            <h2 class="logo_acc">P</h2>
             <nav class="account_navigation">
                 <a href="/paypalclone/my_account">Home</a>
                 <a href="/paypalclone/my_account">Finances</a>
@@ -40,15 +42,16 @@
                 <a href="/paypalclone/my_account">Wallet</a>
                 <a href="/paypalclone/my_account">Activity</a>
                 <a href="/paypalclone/my_account">Help</a>
-                <a href="/paypalclone/my_account">
-                    <span class="icon"><i class="setting_wheel"></i></span>
-                </a>
-                <a href="/paypalclone/my_account">
-                    <span class="icon"><i class="bell"></i></span>
-                </a>
-                <a href="/paypalclone/my_account">LOG OUT</a>
-
             </nav>
+            <a href="/paypalclone/my_account" class="icon">
+                <span class="settings_icon"><i class="fa-solid fa-gear"></i></span>
+            </a>
+            <a href="/paypalclone/my_account" class="icon">
+                <span class="notifications_icon"><i class="fa-solid fa-bell"></i></span>
+            </a>
+            <a href="/paypalclone" class="icon">
+                <span class="logout_icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+            </a>
         </div>
 
     </div>
@@ -67,7 +70,16 @@
     <!--ALL PAGES FOOTER-->
 
     <div th:fragment="footer">
-
+        <footer>
+            <h2 class="logo_foot">Paypal Clone</h2>
+            <nav class="footer_nav">
+                <a href="/paypalclone/help">Help</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Security</a>
+                <a href="#">Fees</a>
+            </nav>
+            <span class="webName">&copy; 1990-2023 PayPal Clone, No right reserved</span>
+        </footer>
     </div>
 </body>
 </html>
