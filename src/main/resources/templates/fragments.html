@@ -43,7 +43,7 @@
                 <a href="/paypalclone/my_account">Activity</a>
                 <a href="/paypalclone/my_account">Help</a>
             </nav>
-            <a href="/paypalclone/my_account" class="icon">
+            <a href="/paypalclone/profile_setting_page" class="icon">
                 <span class="settings_icon"><i class="fa-solid fa-gear"></i></span>
             </a>
             <a href="/paypalclone/my_account" class="icon">
@@ -59,12 +59,14 @@
     <-- HEADER FOR SEND & REQUEST PAGE -->
 
     <div th:fragment="send_request_menu">
-        <nav class="send_request_navigation">
-            <a href="/paypalclone/send_money">Send</a>
-            <a href="/paypalclone/request_money">Request</a>
-            <a href="/paypalclone/contact_list">Contacts</a>
-            <a href="#">More</a>
-        </nav>
+        <div class="send_request_header">
+            <nav class="send_request_navigation">
+                <a class="menu_header" href="/paypalclone/send_money">Send</a>
+                <a class="menu_header" href="/paypalclone/request_money">Request</a>
+                <a class="menu_header" href="/paypalclone/contact_list">Contacts</a>
+                <a class="menu_header" href="#">More</a>
+            </nav>
+        </div>
     </div>
 
     <!--ALL PAGES FOOTER-->
@@ -78,7 +80,7 @@
                 <a href="#">Security</a>
                 <a href="#">Fees</a>
             </nav>
-            <span class="webName">&copy; 1990-2023 PayPal Clone, No right reserved</span>
+            <span class="webName">&copy; 1990-2023 PayPal Clone, No rights reserved</span>
         </footer>
     </div>
 </body>

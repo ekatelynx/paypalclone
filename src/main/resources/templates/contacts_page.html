@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/>/www.thymeleaf.org" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal Clone: Contacts</title>
+    <link rel="stylesheet" href="css/style-account.css">
+    <script src="https://kit.fontawesome.com/49d89cdd8b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div th:replace="~{fragments :: account_header}"></div>
+    <div th:replace="~{fragments :: send_request_menu}"></div>
+    <div th:replace="~{fragments :: footer}"></div>
+
+
+    <div class="search">
+        <input class="search_contacts">
+    </div>
+    <div class="profile">
+        <h2>Your Profile</h2>
+        <span class="user_icon"></span>
+        <Name>User Name</Name>
+        <email>User email</email>
+        <h2>Manage Profile</h2>
+    </div>
+
+
+</body>
+</html>

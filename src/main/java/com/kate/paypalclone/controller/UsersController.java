@@ -2,8 +2,9 @@ package com.kate.paypalclone.controller;
 
 
 import com.kate.paypalclone.model.UsersModel;
-import com.kate.paypalclone.service.UsersService;
+import com.kate.paypalclone.service.IUsersService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class UsersController {
 
     @Autowired
-    UsersService usersService;
+    IUsersService usersService;
 
     @GetMapping("/register")
     public String getRegisterPage(Model model) {
@@ -30,13 +31,18 @@ public class UsersController {
 //
     @PostMapping("/process_registration")
     public String register(@ModelAttribute("usersModel") UsersModel usersModel) {
-        UsersModel registeredUser = usersService.registerUser(usersModel);
-        if (registeredUser != null && registeredUser.getId() != null){
-            System.out.println("New user "+registeredUser.getName() + " " + registeredUser.getEmail()+" has been registered successfully!");
+        System.out.println("Received registration request from the following user: " + usersModel);
+        UsersModel registeredUser = null;
+        if (usersService.duplicateUserCheck(usersModel.getEmail()) == false) {
+            registeredUser = usersService.registerUser(usersModel);
+            if (registeredUser != null && registeredUser.getId() != null){
+                System.out.println("New user "+registeredUser.getName() + " " + registeredUser.getEmail()+" has been registered successfully!");
+            }
+            else{
+                System.out.println("New user "+registeredUser.getName() + " " + registeredUser.getEmail()+" could not be registered. Please try again later!");
+            }
         }
-        else{
-            System.out.println("New user "+registeredUser.getName() + " " + registeredUser.getEmail()+" could not be registered. Please try again later!");
-        }
+
         return registeredUser == null ? "error_page" : "login_page";
     }
 
@@ -61,7 +67,6 @@ public class UsersController {
 
     @GetMapping("/my_account")
     public String getMyAccountPage(Model model) {
-//        model.addAttribute("registerRequest", new UsersModel());
         return "my_account";
     }
 
@@ -77,4 +82,19 @@ public class UsersController {
         return "request_money_page";
     }
 
+    @GetMapping("/contacts_page")
+    public String getContactsPage(Model model) {
+//        model.addAttribute("registerRequest", new UsersModel());
+        return "contacts_page";
+    }
+
+    @GetMapping("/profile_setting_page")
+    public String getProfileSettingPage(Model model) {
+
+        return "profile_setting_page";
+    }
+
+
+
 }
+

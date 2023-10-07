@@ -171,8 +171,8 @@ footer {
 
 .btnTransferMoney {
     position: absolute;
-    left: -33px;
-    top: 170px;
+    left: -25px;
+    top: 160px;
     width: 150px;
     height: 35px;
     background: #341f13;
@@ -180,6 +180,7 @@ footer {
     border-radius: 30px;
     cursor: pointer;
     font-size: 1em;
+    line-height: 2;
     text-align: center;
     color: #cecece;
     margin-left: 40px;
@@ -190,6 +191,14 @@ footer {
     background: #75523eef;
 }
 
+.balance h3 {
+
+}
+
+.balance h2 {
+    font-size: 40px;
+    line-height: 2;
+}
 
 .rewards {
     position: relative;
@@ -203,14 +212,20 @@ footer {
     outline: none;
     border-radius: 18px;
     font-size: 1.1em;
+    line-height: 2;
     color: #341f13ef;
     font-weight: 500;
     margin: 40px;
     padding: 10px;
 }
 
+.rewards h3 {
 
+}
 
+.rewards h2 {
+    font-size: 40px;
+}
 
 
 
@@ -309,10 +324,96 @@ footer {
 
 
 
-/*   SEND/REQUEST PAGE STYLING   */
-
-
-
 
 /*   MENU HEADER   */
 
+.send_request_header {
+    position: fixed;
+    top: 114px;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    background-color: rgba(206,192,167,0.30);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.send_request_navigation .menu_header  {
+    position: relative;
+    right: -300px;
+    font-size: 1.1em;
+    color: #cecece;
+    border: 1px solid transparent;
+    border-radius: 40px;
+    background: transparent;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 15px;
+    transition: .5s;
+}
+.send_request_navigation .menu_header:hover {
+    border: 1px solid transparent;
+    border-radius: 40px;
+    background: #d2c8c262;
+    padding: 10px;
+}
+
+
+/*   SEND PAGE STYLING     */
+
+
+
+.send_money {
+    position: relative;
+    top: -440px;
+    left: 452px;
+    color: #cecece;
+    line-height: 2;
+}
+
+.send_money h2 {
+
+}
+
+.send_money .username_field {
+
+}
+
+.send_money .next {
+
+}
+
+.send_money h3 {
+
+}
+
+
+/*   REQUEST PAGE STYLING   */
+
+
+.request_money {
+    position: relative;
+    top: -440px;
+    left: 452px;
+    color: #cecece;
+    line-height: 2;
+}
+
+.request_money h2 {
+
+}
+
+.request_money .username_field {
+
+}
+
+.request_money .next {
+
+}
+
+.request_money h3 {
+
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/>/www.thymeleaf.org" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal Clone: Requesting Money</title>
+    <link rel="stylesheet" href="css/style-account.css">
+    <script src="https://kit.fontawesome.com/49d89cdd8b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div th:replace="~{fragments :: account_header}"></div>
+    <div th:replace="~{fragments :: footer}"></div>
+    <h1>Contact name and email</h1>
+    <h2>$0.00</h2>
+    <h3>USD</h3>
+    <h3>What's this for?</h3>
+    <input class="requesting_reason">
+    <button class="next_request">Next</button>
+    <a href="/paypalclone/request_money" class="requestMoney-link">
+        <h3>Cancel</h3>
+    </a>
+</div>
+</body>
